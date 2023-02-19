@@ -3,7 +3,7 @@ import NavBar from "./components/navbar";
 
 function App() {
   return (
-    <div className="container mt-8 px-3 lg:mx-auto">
+    <div className="container my-6 px-3 lg:mx-auto">
       <NavBar />
     </div>
   );
