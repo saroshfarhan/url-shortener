@@ -11,7 +11,9 @@ function NavBar() {
 
   return (
     <nav className="relative flex items-center justify-between gap-8 lg:static">
-      <img src={logo} alt="shotly logo" />
+      <a href="#">
+        <img src={logo} alt="shotly logo" />
+      </a>
       <div
         id="desktopNav"
         className="hidden lg:visible lg:flex lg:w-full lg:justify-between"
