@@ -6,6 +6,10 @@ module.exports = {
       center: true,
     },
     extend: {
+      backgroundImage: {
+        shortenDeskTop: "url('/bg-shorten-desktop.svg')",
+        shortenMobile: "url('/bg-shorten-mobile.svg')",
+      },
       colors: {
         primary_cyan: "hsl(180, 66%, 49%)",
         primary_dark_violet: "hsl(257, 27%, 26%)",
