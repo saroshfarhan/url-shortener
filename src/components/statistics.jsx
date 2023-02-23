@@ -33,7 +33,7 @@ function Statistics() {
   });
 
   return (
-    <div className="relative top-[-100px] z-[-10] bg-neutral_grayish_violet bg-opacity-30">
+    <div className="relative top-[-100px] z-[-10] bg-primary_dark_violet bg-opacity-5">
       <div className="container px-3 pb-[5rem] pt-[75px]">
         <div id="shortLinks" className="hidden">
           <h1>shortened links</h1>
