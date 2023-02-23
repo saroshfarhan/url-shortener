@@ -12,7 +12,7 @@ function UrlShortener() {
         />
         <button
           type="button"
-          className="rounded-lg bg-primary_cyan px-8 py-3 text-base font-bold text-white hover:bg-opacity-60 lg:basis-1/4"
+          className="rounded-lg bg-primary_cyan px-8 py-3 text-base font-bold text-white hover:bg-hover lg:basis-1/4"
         >
           Shorten it!
         </button>
