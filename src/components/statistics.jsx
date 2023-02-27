@@ -24,16 +24,28 @@ const stats = [
 function Statistics() {
   const renderStats = stats.map((stat, index) => {
     return (
-      <div key={index}>
-        <img src={stat.img} alt={stat.title} />
-        <h1>{stat.title}</h1>
-        <h2>{stat.desc}</h2>
+      <div
+        key={index}
+        className={`relative flex flex-col items-center justify-center rounded-lg bg-white p-6 lg:items-start ${
+          index === 1 ? "lg:mt-8" : index === 2 ? "lg:mt-16" : "lg:mt-0"
+        }`}
+      >
+        <div className="absolute top-[-1.7rem] inline-flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-primary_dark_violet">
+          <img src={stat.img} alt={stat.title} className="w-[1.6rem]" />
+        </div>
+
+        <h1 className="text-center text-xl font-semibold text-neutral_very_dark_violet lg:text-left">
+          {stat.title}
+        </h1>
+        <h2 className="mt-2 text-center text-sm text-neutral_grayish_violet lg:text-left">
+          {stat.desc}
+        </h2>
       </div>
     );
   });
 
   return (
-    <div className="relative top-[-100px] z-[-10] bg-primary_dark_violet bg-opacity-5">
+    <div className="z-[-10] bg-primary_dark_violet bg-opacity-5">
       <div className="container px-3 pb-[5rem] pt-[75px] lg:px-[6rem]">
         <div id="shortLinks" className="hidden">
           <h1>shortened links</h1>
