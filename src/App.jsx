@@ -4,6 +4,7 @@ import Main from "./components/main";
 import UrlShortener from "./components/urlShortener";
 import Statistics from "./components/statistics";
 import Cta from "./components/cta";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <div>
         <Statistics />
         <Cta />
+        <Footer />
       </div>
     </div>
   );

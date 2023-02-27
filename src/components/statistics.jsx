@@ -24,23 +24,25 @@ const stats = [
 function Statistics() {
   const renderStats = stats.map((stat, index) => {
     return (
-      <div
-        key={index}
-        className={`relative flex flex-col items-center justify-center rounded-lg bg-white p-6 lg:items-start ${
-          index === 1 ? "lg:mt-8" : index === 2 ? "lg:mt-16" : "lg:mt-0"
-        }`}
-      >
-        <div className="absolute top-[-1.7rem] inline-flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-primary_dark_violet">
-          <img src={stat.img} alt={stat.title} className="w-[1.6rem]" />
-        </div>
+      <>
+        <div
+          key={index}
+          className={`relative flex flex-col items-center justify-center rounded-lg bg-white p-6 lg:items-start ${
+            index === 1 ? "lg:mt-6" : index === 2 ? "lg:mt-14" : "lg:mt-0"
+          }`}
+        >
+          <div className="absolute top-[-1.7rem] inline-flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-primary_dark_violet">
+            <img src={stat.img} alt={stat.title} className="w-[1.6rem]" />
+          </div>
 
-        <h1 className="text-center text-xl font-semibold text-neutral_very_dark_violet lg:text-left">
-          {stat.title}
-        </h1>
-        <h2 className="mt-2 text-center text-sm text-neutral_grayish_violet lg:text-left">
-          {stat.desc}
-        </h2>
-      </div>
+          <h1 className="text-center text-xl font-semibold text-neutral_very_dark_violet lg:text-left">
+            {stat.title}
+          </h1>
+          <h2 className="mt-2 text-center text-sm text-neutral_grayish_violet lg:text-left">
+            {stat.desc}
+          </h2>
+        </div>
+      </>
     );
   });
 
@@ -67,6 +69,7 @@ function Statistics() {
           <div className="mt-16 flex flex-col gap-10  lg:flex-row lg:items-start lg:justify-between">
             {renderStats}
           </div>
+          <div className="relative top-[-20rem] z-[-10] h-[.4rem] rotate-90 bg-primary_cyan md:top-[-16rem] md:left-[9.5rem] md:w-[400px] lg:top-[-10rem] lg:left-0 lg:z-[-10] lg:h-[.4rem] lg:w-full lg:rotate-0 xl:w-[950px]"></div>
         </div>
       </div>
     </div>
