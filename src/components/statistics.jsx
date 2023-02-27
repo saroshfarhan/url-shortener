@@ -35,7 +35,7 @@ function Statistics() {
             <img src={stat.img} alt={stat.title} className="w-[1.6rem]" />
           </div>
 
-          <h1 className="text-center text-xl font-semibold text-neutral_very_dark_violet lg:text-left">
+          <h1 className="mt-4 text-center text-xl font-semibold text-neutral_very_dark_violet lg:text-left">
             {stat.title}
           </h1>
           <h2 className="mt-2 text-center text-sm text-neutral_grayish_violet lg:text-left">
