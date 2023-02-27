@@ -12,7 +12,7 @@ function Footer() {
         <a href="#">
           <img src={logo} alt="shortly logo" className="contrast-200 invert" />
         </a>
-        <div className="flex flex-col gap-14 text-center lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-14 text-center lg:flex-row lg:items-start lg:justify-between lg:text-left">
           <div id="features">
             <a href="#" className="font-semibold text-white">
               Features
