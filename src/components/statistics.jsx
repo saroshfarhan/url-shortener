@@ -34,7 +34,7 @@ function Statistics() {
 
   return (
     <div className="relative top-[-100px] z-[-10] bg-primary_dark_violet bg-opacity-5">
-      <div className="container px-3 pb-[5rem] pt-[75px]">
+      <div className="container px-3 pb-[5rem] pt-[75px] lg:px-[6rem]">
         <div id="shortLinks" className="hidden">
           <h1>shortened links</h1>
           <h1>shortened links</h1>
@@ -52,7 +52,9 @@ function Statistics() {
             <br className="hidden lg:block" /> our advanced statistics
             dashboard.
           </h2>
-          {renderStats}
+          <div className="mt-16 flex flex-col gap-10  lg:flex-row lg:items-start lg:justify-between">
+            {renderStats}
+          </div>
         </div>
       </div>
     </div>
