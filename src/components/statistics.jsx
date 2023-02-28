@@ -21,41 +21,51 @@ const stats = [
   },
 ];
 
-function Statistics() {
+function Statistics({ urlData }) {
+  const renderUrls = urlData.map((url, index) => {
+    return (
+      <div
+        key={index}
+        className="flex items-center justify-between rounded-lg bg-white py-4 px-4"
+      >
+        <h1>{url.org}</h1>
+        <h2>{url.short}</h2>
+      </div>
+    );
+  });
+
   const renderStats = stats.map((stat, index) => {
     return (
-      <>
-        <div
-          key={index}
-          className={`relative flex flex-col items-center justify-center rounded-lg bg-white p-6 lg:items-start ${
-            index === 1 ? "lg:mt-6" : index === 2 ? "lg:mt-14" : "lg:mt-0"
-          }`}
-        >
-          <div className="absolute top-[-1.7rem] inline-flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-primary_dark_violet">
-            <img src={stat.img} alt={stat.title} className="w-[1.6rem]" />
-          </div>
-
-          <h1 className="mt-4 text-center text-xl font-semibold text-neutral_very_dark_violet lg:text-left">
-            {stat.title}
-          </h1>
-          <h2 className="mt-2 text-center text-sm text-neutral_grayish_violet lg:text-left">
-            {stat.desc}
-          </h2>
+      <div
+        key={index}
+        className={`relative flex flex-col items-center justify-center rounded-lg bg-white p-6 lg:items-start ${
+          index === 1 ? "lg:mt-6" : index === 2 ? "lg:mt-14" : "lg:mt-0"
+        }`}
+      >
+        <div className="absolute top-[-1.7rem] inline-flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-primary_dark_violet">
+          <img src={stat.img} alt={stat.title} className="w-[1.6rem]" />
         </div>
-      </>
+
+        <h1 className="mt-4 text-center text-xl font-semibold text-neutral_very_dark_violet lg:text-left">
+          {stat.title}
+        </h1>
+        <h2 className="mt-2 text-center text-sm text-neutral_grayish_violet lg:text-left">
+          {stat.desc}
+        </h2>
+      </div>
     );
   });
 
   return (
     <div className="z-[-10] bg-primary_dark_violet bg-opacity-5">
       <div className="container px-3 pb-[5rem] pt-[75px] lg:px-[6rem]">
-        <div id="shortLinks" className="hidden">
-          <h1>shortened links</h1>
-          <h1>shortened links</h1>
-          <h1>shortened links</h1>
-          <h1>Statistics</h1>
-          <h1>Statistics</h1>
-          <h1>Statistics</h1>
+        <div
+          id="shortLinks"
+          className={`${
+            urlData.length === 0 ? "hidden" : "mt-10 grid gap-3 lg:mt-4"
+          }`}
+        >
+          {renderUrls}
         </div>
         <div id="statistics" className="mt-[6rem]">
           <h1 className="text-center text-3xl font-bold text-neutral_very_dark_blue">
