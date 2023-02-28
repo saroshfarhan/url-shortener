@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import CopyToClipboard from "react-copy-to-clipboard";
 import brandRec from "../assets/icon-brand-recognition.svg";
 import detailRec from "../assets/icon-detailed-records.svg";
 import fullCust from "../assets/icon-fully-customizable.svg";
@@ -22,14 +23,30 @@ const stats = [
 ];
 
 function Statistics({ urlData }) {
+  const [copy, setCopy] = useState(false);
+  const handleCopyText = (index) => {
+    console.log(index);
+  };
   const renderUrls = urlData.map((url, index) => {
     return (
       <div
         key={index}
-        className="flex items-center justify-between rounded-lg bg-white py-4 px-4"
+        className="grid gap-2 rounded-lg bg-white px-4 py-4 lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:px-6"
       >
         <h1>{url.org}</h1>
-        <h2>{url.short}</h2>
+        <hr className="block lg:hidden" />
+        <div className="grid gap-4 lg:flex lg:items-center lg:justify-between lg:gap-8">
+          <h2 className="text-primary_cyan">{url.short}</h2>
+          <CopyToClipboard text={url.short}>
+            <button
+              type="button"
+              className="rounded-md bg-primary_cyan px-8 py-2 text-base font-bold text-white hover:bg-hover"
+              onClick={() => handleCopyText(index)}
+            >
+              Copy
+            </button>
+          </CopyToClipboard>
+        </div>
       </div>
     );
   });
