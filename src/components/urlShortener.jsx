@@ -4,7 +4,7 @@ function UrlShortener({ handleClick }) {
   const [url, setUrl] = useState("");
   return (
     <div className="container absolute top-[-4rem] rounded-lg bg-primary_dark_violet bg-shortenMobile bg-cover lg:flex lg:h-[150px] lg:w-full lg:items-center lg:justify-center lg:bg-shortenDeskTop">
-      <div className="flex flex-col gap-3 px-5 py-6 lg:w-full lg:flex-row lg:items-center lg:justify-evenly lg:gap-5 lg:px-16">
+      <div className="flex flex-col gap-3 px-5 py-6 lg:w-full lg:flex-row lg:items-center lg:justify-evenly lg:gap-5 lg:px-12">
         <input
           type="text"
           name="longURL"
