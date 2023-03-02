@@ -16,10 +16,20 @@ function App() {
       );
       setUrls((prevUrls) => {
         if (prevUrls.length === 0) {
-          return [{ org: url, short: response.data.result.full_short_link }];
+          return [
+            {
+              org: url,
+              short: response.data.result.full_short_link,
+              copied: false,
+            },
+          ];
         } else {
           return [
-            { org: url, short: response.data.result.full_short_link },
+            {
+              org: url,
+              short: response.data.result.full_short_link,
+              copied: false,
+            },
             ...prevUrls,
           ];
         }
@@ -28,6 +38,17 @@ function App() {
       console.log(e);
     }
   };
+
+  const handleCopyText = (id) => {
+    setUrls((prevUrls) =>
+      prevUrls.map((url, index) => {
+        return index === id
+          ? { ...url, copied: true }
+          : { ...url, copied: false };
+      })
+    );
+  };
+  console.log(urls);
   return (
     <div>
       <div className="container relative my-6 px-3 lg:mx-auto lg:px-[6rem]">
@@ -38,7 +59,7 @@ function App() {
         </div>
       </div>
       <div>
-        <Statistics urlData={urls} />
+        <Statistics urlData={urls} handleCopyText={handleCopyText} />
         <Cta />
         <Footer />
       </div>

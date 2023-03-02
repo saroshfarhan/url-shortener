@@ -22,11 +22,7 @@ const stats = [
   },
 ];
 
-function Statistics({ urlData }) {
-  const [copy, setCopy] = useState(false);
-  const handleCopyText = (index) => {
-    console.log(index);
-  };
+function Statistics({ urlData, handleCopyText }) {
   const renderUrls = urlData.map((url, index) => {
     return (
       <div
@@ -38,13 +34,23 @@ function Statistics({ urlData }) {
         <div className="grid gap-4 lg:flex lg:items-center lg:justify-between lg:gap-8">
           <h2 className="text-primary_cyan">{url.short}</h2>
           <CopyToClipboard text={url.short}>
-            <button
-              type="button"
-              className="rounded-md bg-primary_cyan px-8 py-2 text-base font-bold text-white hover:bg-hover"
-              onClick={() => handleCopyText(index)}
-            >
-              Copy
-            </button>
+            {url.copied ? (
+              <button
+                type="button"
+                className="rounded-md bg-primary_dark_violet px-8 py-2 text-base font-bold text-white hover:cursor-not-allowed"
+                onClick={() => handleCopyText(index)}
+              >
+                Copied!
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="rounded-md bg-primary_cyan px-8 py-2 text-base font-bold text-white hover:bg-hover"
+                onClick={() => handleCopyText(index)}
+              >
+                Copy
+              </button>
+            )}
           </CopyToClipboard>
         </div>
       </div>
