@@ -27,7 +27,7 @@ function Statistics({ urlData, handleCopyText }) {
     return (
       <div
         key={index}
-        className="grid gap-2 rounded-lg bg-white px-4 py-4 lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:px-6"
+        className="grid gap-2 rounded-lg bg-white px-4 py-4 lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:px-6"
       >
         <h1>{url.org}</h1>
         <hr className="block lg:hidden" />
