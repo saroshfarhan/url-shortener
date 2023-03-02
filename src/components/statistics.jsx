@@ -29,7 +29,7 @@ function Statistics({ urlData, handleCopyText }) {
         key={index}
         className="grid gap-2 rounded-lg bg-white px-4 py-4 lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:px-6"
       >
-        <h1 className="pr-3">{url.org}</h1>
+        <h1 className="pr-8">{url.org}</h1>
         <hr className="block lg:hidden" />
         <div className="grid gap-4 lg:flex lg:items-center lg:justify-between lg:gap-8">
           <h2 className="text-primary_cyan">{url.short}</h2>
