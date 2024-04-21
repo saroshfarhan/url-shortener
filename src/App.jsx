@@ -11,15 +11,26 @@ function App() {
   const [urls, setUrls] = useState([]);
   const handleClick = async (url) => {
     try {
-      const response = await axios(
-        `https://api.shrtco.de/v2/shorten?url=${url}`
-      );
+      // Define the headers
+      const headers = {
+        "Content-Type": "text/plain",
+        apikey: "AtJpfMCXaU61UYkNWnCYtZKCPvh3OQkV",
+      };
+
+      const shortenUrl = "https://api.apilayer.com/short_url/hash";
+      const data = url;
+
+      // const response = await axios(
+      //   `https://api.shrtco.de/v2/shorten?url=${url}`
+      // );
+      const response = await axios.post(shortenUrl, data, { headers });
+
       setUrls((prevUrls) => {
         if (prevUrls.length === 0) {
           return [
             {
               org: url,
-              short: response.data.result.full_short_link,
+              short: response.data.short_url,
               copied: false,
             },
           ];
